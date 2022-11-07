@@ -17,13 +17,13 @@ employee[key]=value;
 }
 
 function deleteFromEmployeeByKey(employee, key){
-    const newobj = Object.assign({}, employee);
-    newobj[key]=undefined;
+    const newobj = {...employee}
+    delete newobj[key]
     return newobj;
 }
 
 function destructivelyDeleteFromEmployeeByKey(employee, key){
-    const newEmployee = Object.assign(employee, {});
-    newEmployee[key]=undefined;
+    const newEmployee = {...employee}
+    delete employee[key]
     return employee;
 }
